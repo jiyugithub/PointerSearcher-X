@@ -23,19 +23,19 @@ jobs:
         version: 1.0
 
     - name: Build x86_64
-      run: cargo build --target x86_64-unknown-linux-musl --release
+      run: cargo build --target x86_64-unknown-linux-musl --release --verbose
 
     - name: Upload x86_64 Building
       uses: actions/upload-artifact@v4
       with:
         name: pwatch-x86_64-unknown-linux-musl
-        path: target/x86_64-unknown-linux-musl/release/pwatch
+        path: target/x86_64-unknown-linux-musl/release/ptrscan
 
     - name: Build AArch64
-      run: cargo build --target aarch64-unknown-linux-musl --release
+      run: cargo build --target aarch64-unknown-linux-musl --release --verbose
 
     - name: Upload AArch64 Building
       uses: actions/upload-artifact@v4
       with:
         name: pwatch-aarch64-unknown-linux-musl
-        path: target/aarch64-unknown-linux-musl/release/pwatch
+        path: target/aarch64-unknown-linux-musl/release/ptrscan
