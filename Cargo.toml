@@ -1,15 +1,3 @@
-[workspace]
-resolver = "2"
-members = ["libptrscan", "command"]
-
-[profile.release]
-opt-level = 3
-lto = true
-codegen-units = 1
-panic = "abort"
-strip = true
-debug = false
-
 
 
 [package]
@@ -31,6 +19,3 @@ futures = "0.3.30"
 log = "0.4"
 pretty_env_logger = "0.5"
 
-[[example]]
-name = "watch-target"
-path = "examples/watch_target.rs"
