@@ -3,9 +3,6 @@ name = "command"
 version = "0.1.0"
 edition = "2021"
 
-[[bin]]
-name = "ptrscan"
-path = "src/main.rs"
 
 [dependencies.argh]
 git = "https://github.com/google/argh"
