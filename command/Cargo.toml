@@ -1,6 +1,4 @@
-[package]
-name = "command"
-version = "0.1.0"
-edition = "2021"
+[target.aarch64-unknown-linux-musl]
+linker = "ld.lld"
 
 
