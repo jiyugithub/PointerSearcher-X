@@ -24,7 +24,7 @@ jobs:
 
   
     - name: Build AArch64
-      run: cargo build --ptrscan-aarch64-linux-android --release
+      run: cargo build --aarch64-unknown-linux-musl --release
 
     - name: Upload AArch64 Building
       uses: actions/upload-artifact@v4
