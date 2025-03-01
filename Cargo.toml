@@ -9,3 +9,28 @@ codegen-units = 1
 panic = "abort"
 strip = true
 debug = false
+
+
+
+[package]
+name = "ptrscan"
+version = "0.1.1"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "4.5.8", features = ["derive"] }
+nix = { version = "0.29", features = ["mman", "poll"] }
+perf-event-open-sys = "4.0"
+colored = "2"
+tokio = { version = "1.38.0", features = ["macros", "rt", "net"] }
+procfs = { version = "0.16.0", default-features = false }
+futures = "0.3.30"
+log = "0.4"
+pretty_env_logger = "0.5"
+
+[[example]]
+name = "watch-target"
+path = "examples/watch_target.rs"
