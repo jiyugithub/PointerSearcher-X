@@ -14,7 +14,7 @@ jobs:
     - uses: dtolnay/rust-toolchain@master
       with:
         toolchain: nightly
-        targets: x86_64-unknown-linux-musl,aarch64-unknown-linux-musl
+        targets: ptrscan-aarch64-linux-android
         components: rust-src
 
     - uses: awalsh128/cache-apt-pkgs-action@latest
@@ -22,17 +22,9 @@ jobs:
         packages: lld
         version: 1.0
 
-    - name: Build x86_64
-      run: cargo build --target x86_64-unknown-linux-musl --release --verbose
-
-    - name: Upload x86_64 Building
-      uses: actions/upload-artifact@v4
-      with:
-        name: pwatch-x86_64-unknown-linux-musl
-        path: target/x86_64-unknown-linux-musl/release/ptrscan
-
+  
     - name: Build AArch64
-      run: cargo build --target aarch64-unknown-linux-musl --release --verbose
+      run: cargo build --ptrscan-aarch64-linux-android --release
 
     - name: Upload AArch64 Building
       uses: actions/upload-artifact@v4
